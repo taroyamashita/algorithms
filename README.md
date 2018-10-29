@@ -1,2 +1,2 @@
 # algorithms
-repository of algorithmic challenges 
+repository of favourite algorithms
