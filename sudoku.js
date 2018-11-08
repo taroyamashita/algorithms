@@ -7,19 +7,16 @@ let sudokuChecker = function(boardString){
     let boardArray = boardString.split("\n");
     console.log(boardArray);
 
-    
+    let boardColumnsArray = []; 
 
-    let columnMaker = function(boardArray){
-        let boardColumns = [];
-        for(let i =0; i< boardArray.length; i++){
-            for(let j = 0; j < boardArray.length; j++){
-                
-            }
+    for(let i =0; i< boardArray.length; i++){
+        let boardColumn = [];
+        for(let j = boardArray.length-1; j >0; j--){
+            console.log(boardArray);
+            boardColumn.push(boardArray[j][i]);
         }
-
-
-
-        return boardColumns; 
+        console.log(boardColumn);
+        boardColumnsArray.push(boardColumn);
     }
 
 }
