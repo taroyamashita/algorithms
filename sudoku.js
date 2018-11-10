@@ -19,11 +19,37 @@ let sudokuChecker = function(boardString){
 
     // create grid; 
 
-    let boardGrids = [[],[],[],[],[],[],[],[],[],[]];
-    for(let i = 0; i < boardArray.length; i++){
-        let currRow = boardArray[i].split("");
-        console.log(currRow);
-    
+    let boardGrids = [];
+    for(let i = 0; i < boardArray.length-2; i+=3){
+        let grid = ""
+        let grid2 = "";
+        let grid3 = ""
+        let gridChunk1 = boardArray[i].slice(0,3);
+        let gridChunk2 = boardArray[i+1].slice(0,3);
+        let gridChunk3 = boardArray[i+2].slice(0,3);
+        let gridChunk4 = boardArray[i].slice(3,6);
+        let gridChunk5 = boardArray[i+1].slice(3,6);
+        let gridChunk6 = boardArray[i+2].slice(3,6);
+        let gridChunk7 = boardArray[i].slice(6);
+        let gridChunk8 = boardArray[i+1].slice(6);
+        let gridChunk9 = boardArray[i+2].slice(6);
+        grid+=gridChunk1;
+        grid+=gridChunk2;
+        grid+=gridChunk3;
+        grid2+=gridChunk4;
+        grid2+=gridChunk5;
+        grid2+=gridChunk6;
+        grid3+=gridChunk7;
+        grid3+=gridChunk8;
+        grid3+=gridChunk9;
+
+        boardGrids.push(grid);
+        boardGrids.push(grid2);
+        boardGrids.push(grid3);
+    }
+    console.log('board Array is \n', boardArray);
+    console.log('board columns are \n', boardColumnsArray);
+    console.log('board grids are \n', boardGrids);
 
 }
 
