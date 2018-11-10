@@ -6,6 +6,7 @@ let sudokuChecker = function(boardString){
     
     //create rows
     let boardArray = boardString.split("\n");
+    let isValid = 'solved'
 
     // create columns 
     let boardColumnsArray = []; 
@@ -50,6 +51,32 @@ let sudokuChecker = function(boardString){
     console.log('board Array is \n', boardArray);
     console.log('board columns are \n', boardColumnsArray);
     console.log('board grids are \n', boardGrids);
+
+    boardArray.forEach((string)=>{
+        for(var i = 1; i <= 9; i++){
+            if(!string.includes(i.toString())){
+                isValid = 'invalid'
+            }
+        }       
+    })
+    boardColumnsArray.forEach((string)=>{
+        for(var i = 1; i <= 9; i++){
+            if(!string.includes(i.toString())){
+                isValid = 'invalid'
+            }
+        }       
+    })
+    boardGrids.forEach((string)=>{
+        for(var i = 1; i <= 9; i++){
+            if(!string.includes(i.toString())){
+                isValid = 'invalid'
+            }
+        }       
+    })
+
+    console.log(isValid);
+
+    return isValid; 
 
 }
 
