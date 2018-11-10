@@ -4,20 +4,26 @@ let sudokuChecker = function(boardString){
     // check grid; 
     // 
     
+    //create rows
     let boardArray = boardString.split("\n");
-    console.log(boardArray);
 
+    // create columns 
     let boardColumnsArray = []; 
-
     for(let i =0; i< boardArray.length; i++){
         let boardColumn = [];
-        for(let j = boardArray.length-1; j >0; j--){
-            console.log(boardArray);
+        for(let j = 0; j < boardArray.length; j++){
             boardColumn.push(boardArray[j][i]);
         }
-        console.log(boardColumn);
-        boardColumnsArray.push(boardColumn);
+        boardColumnsArray.push(boardColumn.join(""));
     }
+
+    // create grid; 
+
+    let boardGrids = [[],[],[],[],[],[],[],[],[],[]];
+    for(let i = 0; i < boardArray.length; i++){
+        let currRow = boardArray[i].split("");
+        console.log(currRow);
+    
 
 }
 
