@@ -8,7 +8,9 @@ var Tree = function(value, depth = 0){
     var queue = new Queue();
     let result = [];
     queue.enqueue(this);
-      let node = queue.dequeue();
+    console.log('queue is', queue.storage);
+    let node = queue.dequeue();
+    console.log('node is', node);
       while (node) {
         node.children.map(child => queue.enqueue(child));
         result.push(node);
