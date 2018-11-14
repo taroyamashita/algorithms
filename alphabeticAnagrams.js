@@ -29,3 +29,11 @@ function anagramPosition (string) {
   const factorial = n => n === 1 ? 1 : n * factorial(n - 1);
   
   const withoutIndex = (i, array) => array.slice(0, i).concat(array.slice(i + 1));
+
+  let test1 = "BAEBEE";
+  let test2 = "ABBS";
+  let test3 = "BABS";
+  let test4 =  "ARCTIC";
+  let test5 = "STARK"; 
+
+  console.log (anagramPosition(test5));
