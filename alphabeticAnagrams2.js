@@ -1,11 +1,18 @@
 function anagramPosition (string){
     const sorted = string.split('').sort();
+    console.log('sorted is', sorted);
     let count = 1; 
     string.split('').forEach(char => {
         const rank = sorted.indexOf(char);
+        console.log('rank is', rank);
         const wasCounted = {};
+        console.log(sorted.slice(0,rank));
         sorted.slice(0, rank).forEach((el, i)=>{
+            console.log('element is', el);
             if(!wasCounted[el]){
+                console.log(count);
+                console.log(withoutIndex(i, sorted));
+                console.log(countAnagrams(withoutIndex(i, sorted)));
                 count += countAnagrams(withoutIndex(i, sorted));
             }
             wasCounted[el] = true;
@@ -34,9 +41,7 @@ let charOccurrences = countChars(testArray);
 
 let factorialsProduct = Object.keys(charOccurrences).map(char => factorial(charOccurrences[char])).reduce((a,b)=> a*b);
 
-
-
-console.log(factorialsProduct);
+console.log(withoutIndex(3, testArray));
 
 let test1 = "BAEBEE";
 let test2 = "ABBS";
@@ -46,4 +51,3 @@ let test5 = "STARK";
 
 console.log(anagramPosition(test5));
 
-console.log(countChars(['a','a','b','d','g']));
